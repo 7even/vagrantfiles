@@ -4,8 +4,9 @@ My vagrant files to setup development environment.
 
 ## Preparation
 
+[Download](http://downloads.vagrantup.com/) and install vagrant.
+
 ~~~ sh
-$ gem install vagrant
 $ gem install chef
 $ gem install librarian-chef
 ~~~
