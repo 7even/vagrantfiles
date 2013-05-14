@@ -7,7 +7,7 @@ My vagrant files to setup development environment.
 ~~~ sh
 $ gem install vagrant
 $ gem install chef
-$ gem install librarian
+$ gem install librarian-chef
 ~~~
 
 ## Installation
