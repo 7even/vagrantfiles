@@ -41,16 +41,20 @@ Vagrant.configure('2') do |config|
         user_installs: [
           {
             user:   'vagrant',
-            rubies: ['1.9.3-p392'],
-            global: '1.9.3-p392',
+            rubies: ['1.9.3-p429'],
+            global: '1.9.3-p429',
             gems: {
-              '1.9.3-p392' => [
+              '1.9.3-p429' => [
                 { name: 'bundler' },
-                { name: 'pg' }
+                { name: 'pg' },
+                { name: 'rake' }
               ]
             }
           }
         ]
+      },
+      ruby_build: {
+        upgrade: true
       },
       oh_my_zsh: {
         users: [{
