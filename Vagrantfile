@@ -4,6 +4,7 @@ Vagrant.configure('2') do |config|
   config.ssh.forward_agent = true
   config.vm.synced_folder '~/projects', '/projects'
   
+  config.vm.network :forwarded_port, guest: 80,   host: 40080 # nginx
   config.vm.network :forwarded_port, guest: 3000, host: 43000 # rails
   config.vm.network :forwarded_port, guest: 4567, host: 44567 # sinatra
   config.vm.network :forwarded_port, guest: 5432, host: 45432 # postgres
@@ -14,6 +15,8 @@ Vagrant.configure('2') do |config|
     
     chef.add_recipe 'apt'
     chef.add_recipe 'git'
+    chef.add_recipe 'nginx'
+    
     chef.add_recipe 'postgresql::server'
     chef.add_recipe 'postgresql::contrib'
     chef.add_recipe 'postgresql::server_dev'
